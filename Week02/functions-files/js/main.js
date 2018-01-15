@@ -14,3 +14,9 @@ console.log('main.js is loaded');
 function updateInnerHTML(selector, newValue) {
   document.querySelector(selector).innerHTML = newValue;
 }
+
+function strong(value) {
+    // combining strings to produce a new string is called concetenation
+    return '<strong>' + value + '</strong>';
+}
+
