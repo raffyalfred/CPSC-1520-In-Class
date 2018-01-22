@@ -20,3 +20,11 @@ function strong(value) {
     return '<strong>' + value + '</strong>';
 }
 
+function italics(value) {
+    return '<i>' + value + '</i>';
+}
+
+var italicText = document.querySelector('span.note');
+italicText.innerHTML = italics(italicText.innerHTML);
+
+
