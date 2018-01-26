@@ -23,7 +23,9 @@ function changeValue(evt) {
 
     // var imgFeatureTitle = document.querySelector('img.feature');
     var paragraph = document.querySelector('p.feature.title');
-    paragraph.innerHTML= featureLink.alt;
+    paragraph.innerHTML= imgFeatureTitle.alt;
+
+    featureImage.classList.remove('hidden');
     evt.preventDefault();
 }
 
