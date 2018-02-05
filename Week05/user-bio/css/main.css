@@ -17,5 +17,5 @@ form > div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    grid-column: span 2;
+    grid-column: span 2; /* The <div> is a child of the CSS grid */
 }
