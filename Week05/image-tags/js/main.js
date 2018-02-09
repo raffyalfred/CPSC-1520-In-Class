@@ -17,11 +17,19 @@ function submitEvent(evt) {
 
     // ensure that there is a value in the tag field before adding tag
     if (tag.value.trim() != '') {
-    // insert a '#' before the tag for aesthetics
-    document.querySelector('p.feature.tags').innerHTML += '#' + tag.value.trim() + ' ';
-    // to remove the text that was typed in the text box
-    tag.value = '';
-    error.classList.add('hidden');
+
+            if(tag.value.trim().indexOf(' ') >= 0) {
+                error.innerHTML = 'no spaces allowed';
+                error.classList.remove('hidden');
+                
+            } else {
+                document.querySelector('p.feature.tags').innerHTML += '#' + tag.value + ' ';
+                // to remove the text that was typed in the text box
+                tag.value = '';
+                error.classList.add('hidden');
+            }
+
+       
     } else {
         // No data entered in the input field
         error.classList.remove('hidden');
