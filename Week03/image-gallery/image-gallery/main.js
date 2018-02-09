@@ -8,13 +8,13 @@ behaviour from occurring.
 
 // Target the element
 var linksElement = document.querySelector('.image-links');
-var elementSrc = document.querySelector('img.target-image');
+
 
 // Function for the desired action
 function showImage(evt) {
 
     // elementSrc.src = linksElement.href;
-
+    var elementSrc = document.querySelector('img.target-image');
     elementSrc.setAttribute('src', evt.target.href);
     evt.preventDefault();
 }
