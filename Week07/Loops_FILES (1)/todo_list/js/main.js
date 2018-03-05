@@ -1,5 +1,6 @@
 // Enter JavaScript for the exercise here...
 
+
 document.querySelector('[name=toggle]').addEventListener('change', function(evt) {
     var checks = document.querySelectorAll('[name=message]');
     var index = 0;
@@ -15,6 +16,10 @@ document.querySelector('[name=toggle]').addEventListener('change', function(evt)
 
     }
     
-
-    
 });
+
+document.querySelector('button[type="submit"]').addEventListener('submit', function(evt) {
+
+    evt.preventDefault();
+
+})
