@@ -40,8 +40,6 @@ var index;
 //  calendar variable to the next day.
 // ... end of Student Code
 
-var weekdays = document.querySelector('.weekdays');
-
 for (index = 0; index < days.length; index++ ) {
 
   
