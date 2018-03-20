@@ -2,6 +2,7 @@
 var images = ['mountain1.jpg', 'mountain2.jpg', 'mountain3.jpg'];
 var currentImg = 0;
 var idx;
+var slideShowInterval;
 
 // display the current image
 document.querySelector('.carousel>img').src = 'images/' + images[0];
@@ -32,12 +33,7 @@ document.querySelector('.carousel').addEventListener('click', function(evt) {
             currentImg = Number(target.dataset.idx);
         }
 
-        // display the new current image
-        document.querySelector('.carousel>img').src = 'images/' + images[currentImg];
-
-        // update the active selector bullet
-        document.querySelector('.image-tracker .active').classList.remove('active');
-        document.querySelectorAll('[data-idx]')[currentImg].classList.add('active');
+        updateSlide(currentImg);
     }
 });
 
@@ -59,3 +55,21 @@ document.addEventListener('keydown', function(evt) {
             break;
     }
 });
+
+
+function updateSlide (index) {
+    // display the new current image
+    document.querySelector('.carousel>img').src = 'images/' + images[index];
+    // update the active selector bullet
+    document.querySelector('.image-tracker .active').classList.remove('.active');
+    document.querySelectorAll('[data-idx]')[index].classList.add('active');
+}
+
+slideShowInterval = setInterval(function() {
+    currentImg += 1;
+    if (currentImg == images.length) {
+        currentImg = 0;
+    }
+    updateSlide(currentImg)
+
+}, 3000);

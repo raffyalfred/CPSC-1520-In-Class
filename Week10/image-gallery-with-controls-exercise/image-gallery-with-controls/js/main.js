@@ -63,6 +63,10 @@ function documentHandler(evt) {
 	}
 }
 
+function slideShowTimerNext() {
+	moveSlide(+1);
+}
+
 function controlsHandler(evt) {
 	// Determine the next index for image to show
 	switch (evt.target.className) {
@@ -75,7 +79,13 @@ function controlsHandler(evt) {
 		// add cases for the play and pause buttons
 
 		// case play: set an interval that will show the next slide
-
+		case 'btn-play':
+			intervalId = setInterval(slideShowTimerNext, 2000);
+			break;
+		case 'btn-pause':
+			clearInterval(intervalId);
+			break;
+		
 		// case pause: clear the interval set when the play button was clicked
 		
 	}
